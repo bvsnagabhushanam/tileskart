@@ -1,0 +1,52 @@
+<div> 
+    <div class="form-group">
+        <label for="fiterText">Filter Text : </label>
+        <input class="form-control" type="text" [(ngModel)]="filterText" name="filterText" id="fiterText" />
+    </div> 
+
+
+<label for="selectedFilter">selectedFilte : </label>
+<select  [(ngModel)]="selectedFilter" id="selectBox" name="filterBox">
+<option *ngFor="let filter of filterOptions">{{filter}}</option>
+</select>
+
+<div class="form-group">
+    <button  class="btn btn-primary" (click)="filter()">Apply filter</button>
+</div>
+
+</div>
+
+
+
+<div>
+<div [hidden] = "tiles && tiles.length >0" >
+    No Tiles Available here
+   </div>
+<table  *ngIf="tiles && tiles.length>0"  class=" table table-bordered table-responsive table-striped" >
+  <thead>
+  <tr>
+    
+    <th>Tile Name</th>
+    <th> Tile Model</th>
+    <th>Tile Price</th>
+    <th> Tile  Image</th>
+    <th>Tile Avilability</th>
+    
+  </tr>
+  </thead>
+  <tbody>
+  
+<tr *ngFor="let tile of filteredTiles"   app-tile   [ tile]="tile">
+
+ 
+</tr>
+  
+</tbody>
+</table>
+<div> 
+  today date is:{{today|date}}
+</div>
+<div> 
+  today date is:{{today|date:'fullDate'}}
+</div>
+</div>

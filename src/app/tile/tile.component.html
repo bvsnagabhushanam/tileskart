@@ -1,0 +1,7 @@
+
+
+<td>{{tile.name | uppercase}}</td>
+<td>{{tile.model|lowercase}}</td>
+<td>{{tile.price | currency:'INR':true}}</td>
+<td><img [src]="imagePath + tile.image" alt=""></td>
+<td>{{tile.status |status }}</td>

@@ -1,0 +1,12 @@
+userName:<input type="text" class="form-control" name="username" [(ngModel)]="userName"  required />
+passWord:<input type="password" class="form-control" name="password" [(ngModel)]="passWord"  required />
+
+
+
+<div>
+    user name is  : {{userName}}
+    passward  is  : {{passWord}}
+</div>
+userName is  : {{errorMessage}}
+
+<button class="btn btn-primary" (click)="login()">Login</button>
